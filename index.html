@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Navigation Bar</title>
+ <style>
+  body {
+  margin: 0;
+  padding: 0;
+  background-color: #1a1a1a;
+  font-family: Helvetica, Arial, sans-serif;
+  }
+
+  nav {
+  background-color: #232323;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  }
+
+  .logo-placeholder {
+  width: 40px;
+  height: 40px;
+  background-color: #444;
+  margin-right: 2rem;
+  }
+
+  .nav-links {
+  display: flex;
+  gap: 2rem;
+  }
+
+  .nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding-bottom: 0.5rem;
+  position: relative;
+  }
+
+  .nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(90deg, #1ea5f3, #e417ff);
+  transition: width 0.3s ease;
+  }
+
+  .nav-links a:hover::after {
+  width: 100%;
+  }
+
+  .nav-links a.active::after {
+  width: 100%;
+  }
+ </style>
+</head>
+<body>
+ <nav>
+  <div class="logo-placeholder"></div>
+  <div class="nav-links">
+  <a href="#" class="active">Home</a>
+  <a href="#">Updates</a>
+  <a href="#">About</a>
+  </div>
+ </nav>
+</body>
+</html>
