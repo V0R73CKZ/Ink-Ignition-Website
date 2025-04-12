@@ -1,2 +1,2 @@
-# Ink-Ignition-Website
-For covering the website for our game
+# Ink and Ignition
+covering the website for our game
