@@ -1,15 +1,29 @@
-body {
+html, body {
     margin: 0;
     padding: 0;
     background-color: #1a1a1a;
     font-family: Helvetica, Arial, sans-serif;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    min-height: 100vh;
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 nav {
     background-color: #232323;
-    padding: 1rem 2rem;
+    padding: 1rem 0;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr; /* Use fr units for flexibility */
+    align-items: center;
+}
+
+.nav-content {
+    grid-column: 2;
     display: flex;
     align-items: center;
+    gap: 2rem;
+    max-width: 100%;
+    flex-wrap: wrap;
 }
 
 .logo {
@@ -18,11 +32,13 @@ nav {
     background-image: url("base_logo.svg");
     background-repeat: no-repeat;
     margin-right: 2rem;
+    flex-shrink: 0;
 }
 
 .nav-links {
     display: flex;
     gap: 2rem;
+    flex-wrap: wrap;
 }
 
 .nav-links a {
@@ -45,10 +61,26 @@ nav {
     transition: width 0.3s ease;
 }
 
-.nav-links a:hover::after {
+.nav-links a:hover::after,
+.nav-links a.active::after {
     width: 100%;
 }
 
-.nav-links a.active::after {
+/* Main content grid container */
+main {
+    grid-row: 2;
+    margin: 0 auto;
     width: 100%;
+}
+
+.site-footer {
+    grid-row: 3;
+    width: 100%;
+    background: #232323;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    margin-top: auto;
 }
